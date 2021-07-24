@@ -88,31 +88,29 @@ int computescore(char word[30])
         else printf("your number, %i, is safe! \n", numbered[i]);
         //return numbered[i];
     }
-
- 
- 
     //convert with constant
     for (i= 0; i < n; i++)
     {
         numbered[i] = numbered[i] - 97;
         printf("New number : %i \n", numbered[i]);
-        printf("heallo world");
         //return numbered[i];
     }
 
-    //compute points
+    //compute points        
     for (i= 0; i < n; i++)
-    {   x = 0;
-        if (numbered[i] >= 0 && numbered[i] <= 26)
+    {   x = numbered[i];
+
+        printf("points x %i \n", POINTS[x]);
+        /* for (x = 0; x<26; x++)
         {
             if (numbered[i] == x)
             {
-                numbered[i] = POINTS[x];
-                printf("score : %i \n", numbered[i]);
+            numbered[i] = POINTS[x];
+            printf("score : %i \n", numbered[i]);
             }
             else x++;
         }
-        else numbered [i] = numbered[i] -1;
+        */
         //return numbered[i];
     }
 }
