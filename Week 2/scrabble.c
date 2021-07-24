@@ -39,12 +39,10 @@ int main(void)
 
     // Score both words
     computescore(words1);
-    //sum1 = sum;
-    //computescore(word2);
-    //sum2 = sum;
-    return 0;
-}
-/*
+    sum1 = sum;
+    computescore(words2);
+    sum2 = sum;
+
     // TODO: Print the winner
     if (sum1 < sum2)
     {
@@ -56,7 +54,7 @@ int main(void)
     }
     else printf("tie!");
     return 0;
-} */
+} 
 
 
 
@@ -99,28 +97,8 @@ int computescore(char word[30])
     //compute points        
     for (i= 0; i < n; i++)
     {   x = numbered[i];
-
-        printf("points x %i \n", POINTS[x]);
-        /* for (x = 0; x<26; x++)
-        {
-            if (numbered[i] == x)
-            {
-            numbered[i] = POINTS[x];
-            printf("score : %i \n", numbered[i]);
-            }
-            else x++;
-        }
-        */
-        //return numbered[i];
-    }
-}
-/*
-    //sum
-    for (i= 0; i < n; i++)
-    {
-        sum = sum + numbered[i];
+        sum = sum + POINTS[x];
+        printf("sum : %i \n", sum);
     }
     return sum;
-
 }
-*/
