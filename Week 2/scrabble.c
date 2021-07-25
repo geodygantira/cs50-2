@@ -15,9 +15,10 @@ int numbered[30];
 int i;
 int n;
 int x;
+int a;
 int sum1;
 int sum2;
-int sum;
+int sum[2];
 
 
 //function declarations
@@ -39,16 +40,14 @@ int main(void)
 
     // Score both words
     computescore(words1);
-    sum1 = sum;
     computescore(words2);
-    sum2 = sum;
 
     // TODO: Print the winner
-    if (sum1 < sum2)
+    if (sum[0] < sum[1])
     {
         printf("player 2 is the winner!");
     }
-    else if (sum1 > sum2)
+    else if (sum[0]> sum[1])
     {
         printf("player 1 is the winner!");
     }
@@ -77,7 +76,7 @@ int computescore(char word[30])
     //extract any special characters
     for (i= 0; i < n; i++)
     {
-        if (numbered[i] <= 97 || numbered[i] >= 122)
+        if (numbered[i] <= 96 || numbered[i] >= 122)
         {
             printf("before numbered : %i \n", numbered[i]);
             numbered[i] = 0 ;
@@ -91,14 +90,10 @@ int computescore(char word[30])
     {
         numbered[i] = numbered[i] - 97;
         printf("New number : %i \n", numbered[i]);
-        //return numbered[i];
+        x = numbered[i];
+        sum[a] = sum[a] + POINTS[x];
+        printf("sum : %i \n", sum[a]);
     }
-
-    //compute points        
-    for (i= 0; i < n; i++)
-    {   x = numbered[i];
-        sum = sum + POINTS[x];
-        printf("sum : %i \n", sum);
-    }
-    return sum;
+    a++;
+    return sum[a];
 }
