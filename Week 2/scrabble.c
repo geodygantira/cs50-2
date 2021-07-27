@@ -16,8 +16,6 @@ int i;
 int n;
 int x;
 int a;
-int sum1;
-int sum2;
 int sum[2];
 
 
@@ -26,7 +24,7 @@ int computescore(char word[30]);
 
 int main(void)
 {
-
+    //collecting string from user
     printf("player 1 : ");
     scanf("%s", words1);
     printf("your word %c \n", words1[0]);
@@ -56,7 +54,7 @@ int main(void)
 } 
 
 
-
+//functions to compute 
 int computescore(char word[30])
 {
 
@@ -68,10 +66,6 @@ int computescore(char word[30])
         printf("lowered : %c \n",word[i]);
         printf("numbered : %i \n", numbered[i]);
     }
-    
-    //return numbered;
-    //return word;
-
 
     //extract any special characters
     for (i= 0; i < n; i++)
@@ -83,8 +77,8 @@ int computescore(char word[30])
             printf("After numbered : %i \n", numbered[i]);
         }
         else printf("your number, %i, is safe! \n", numbered[i]);
-        //return numbered[i];
     }
+    
     //convert with constant
     for (i= 0; i < n; i++)
     {
