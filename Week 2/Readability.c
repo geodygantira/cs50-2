@@ -2,12 +2,15 @@
 #include <string.h>
 #include <ctype.h>
 
+int n;
+int i;
+
 int main () {
 
-   char words[] ={"Wag"};   /* actual variable declaration */
+   char words[] ={"hello"};   /* actual variable declaration */
    char  *ch;        /* pointer variable declaration */
 
-   ch = &words;  /* store address of var in pointer variable*/
+   ch = words;  /* store address of var in pointer variable*/
 
    printf("Address of var variable: %x\n", &words  );
 
@@ -15,8 +18,11 @@ int main () {
    printf("Address stored in ip variable: %x\n", ch );
 
    /* access the value using the pointer */
-   printf("Value of *ip variable: %s\n", *ch );
-
+   for (i =0, n = strlen(words); i < n; i++)
+   {
+       printf("Value of *ip variable: %c\n", ch[i] );
+   }
+   
    return 0;
 }
 /*//variables declarations
