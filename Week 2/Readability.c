@@ -1,48 +1,65 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
+//letters : count the number of uppercase and lowercase letters in a text
+  //words : count the number of words in a sentence, a word is any sequence of characthers separated by space
+
 
 int n;
 int i;
-
+int l;
+int w;
+int letters();
+int words();
 int main () {
 
-   char words[] ={"hello"};   /* actual variable declaration */
-   char  *ch;        /* pointer variable declaration */
+  char text[10];   /* actual variable declaration */
+  char  *ch;        /* pointer variable declaration */
 
-   ch = words;  /* store address of var in pointer variable*/
+  ch = (char*)calloc(n, sizeof(char));
+  //ch = text;  /* store address of var in pointer variable*/
 
-   printf("Address of var variable: %x\n", &words  );
+  printf("Text :");
+  scanf("%s", ch);
+  n = strlen(ch);
+  printf("textnya adalah : %s \n", ch);
+  printf("Value of *ip variable: %c\n", ch[0]);
 
-   /* address stored in pointer variable */
-   printf("Address stored in ip variable: %x\n", ch );
-
-   /* access the value using the pointer */
-   for (i =0, n = strlen(words); i < n; i++)
-   {
-       printf("Value of *ip variable: %c\n", ch[i] );
-   }
+  letters(ch);
+  words(ch);
    
-   return 0;
+  return 0;
 }
-/*//variables declarations
-char text [500];
 
-
-//pointer declaration
-char *ch;
-
-//adressing pointer to variables
-char ch = &text;
-
-int main()
+int letters (char word[])
 {
-    printf("text : %s\n", *ch);
-    return 0;
-    //letters : count the number of uppercase and lowercase letters in a text
-    //words : count the number of words in a sentence, a word is any sequence of characthers separated by space
+  for (i =0, n = strlen(word); i <=n; i++)
+  {
+    if (isalpha(word[i]))
+    {
+      l++;
+    }
+    else if (word[i] == 20)
+    {
+      i++;
+    }
+  }
+  printf("letters : %i \n", l);
+  return l;
+}
 
-
-}*/
-
+int words (char word[])
+{
+  for (i =0, n =strlen(word); i <=n; i++)
+  {
+    if (isspace(word[i]))
+    {
+      w++;
+    }
+    else 0;
+  }
+  printf("words : %i \n", w);
+  return w;
+}
 
