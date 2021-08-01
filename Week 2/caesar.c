@@ -3,24 +3,28 @@
 #include <string.h>
 #include <stdlib.h>
 
+//Variable declaration
 int i;
 int n;
 int k;
 char text[100];
+
+//pointer declaration and assignment
 char *ch = text;
 
+//function declaration
 char get_text();
 char cipher();
+
 int main(int argc, char *argv[] ) 
 {  
-   printf("Program name is: %s\n", argv[0]);  
-   
+    //return 1 if argument is less or more than 2
    if(argc < 2 || argc >2)
    {  
       printf("error \n");
       return 1;  
    }
-   //check apakah argv[1] digit atau ga
+   //check if every character is digit, return 1 if not digit.
    else 
    {
     for (i=0, n=strlen(argv[1]); i<n; i++)
@@ -42,6 +46,7 @@ int main(int argc, char *argv[] )
    cipher();
 }  
 
+//get text from user
 char get_text()
 {
     printf("plaintext :");
@@ -49,15 +54,19 @@ char get_text()
     printf("text is : %s \n", ch);
 }
 
+//function to convert text
 char cipher()
 {
+
     for (i =0, n=strlen(ch); i<=n; i++)
     {
+        //check if ch[i] is an alphabet
         if(isalpha(ch[i]));
         {
             if(islower(ch[i]))
             {
                 ch[i] = ch[i] - 97;
+                //%26 to make the function is wrap around function, if Z can back to A
                 ch[i] = (ch[i] + k) %26;
                 ch[i] = ch[i] + 97;
             }
@@ -69,10 +78,6 @@ char cipher()
             }
             
         }
-        /*if  (isalpha(ch[i]) == 0)
-        {
-            ch[i] = ch[i];
-        }*/
     }
     printf("cipher text : %s \n", ch);   
 }
