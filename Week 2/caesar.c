@@ -5,9 +5,12 @@
 
 int i;
 int n;
+char text[];
+char *ch = text;
 
-int main(int argc, char *argv[] )  {  
-  
+char get_text();
+int main(int argc, char *argv[] ) 
+{  
    printf("Program name is: %s\n", argv[0]);  
    
    if(argc < 2 || argc >2)
@@ -32,15 +35,13 @@ int main(int argc, char *argv[] )  {
     }
     argv[1] = atoi(argv[1]);
     printf("new digit : %i \n", argv[1]);
-    
    }
-
-   /*{  
-    if (argv[1] < 0)
-    {
-      printf("wrong input");  
-    }
-    //argv[1] = atoi(argv[1]);
-    printf("First argument is: %i\n", argv[1]);  
-   }  */
+   get_text();
 }  
+
+char get_text()
+{
+    printf("Text :");
+    gets(ch);
+    printf("text is : %s", ch);
+}
